@@ -1,41 +1,69 @@
-# Simple Calculator in Python
+print("===== Mukesh Kumar's Simple calculator =====")
 
-def add(a, b):
-    return a + b
+while True:
 
-def subtract(a, b):
-    return a - b
+    print("\nSelect Operation")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Power")
+    print("6. Square Root")
+    print("7. Factorial")
+    print("8. Modulus")
+    print("9. Exit")
 
-def multiply(a, b):
-    return a * b
+    choice = input("Enter choice (1-9): ")
 
-def divide(a, b):
-    if b == 0:
-        return "Error! Division by zero."
-    return a / b
+    # Exit
+    if choice == '9':
+        print("Calculator Closed")
+        break
 
-print("Simple Calculator")
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
+    # Square Root
+    elif choice == '6':
+        num = float(input("Enter number: "))
 
-choice = input("Enter choice (1/2/3/4): ")
+        if num < 0:
+            print("Square root not possible for negative numbers")
+        else:
+            print("Result:", math.sqrt(num))
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+    # Factorial
+    elif choice == '7':
+        num = int(input("Enter number: "))
 
-if choice == '1':
-    print("Result:", add(num1, num2))
+        if num < 0:
+            print("Factorial not possible")
+        else:
+            print("Result:", math.factorial(num))
 
-elif choice == '2':
-    print("Result:", subtract(num1, num2))
+    # Other operations
+    else:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
 
-elif choice == '3':
-    print("Result:", multiply(num1, num2))
+        if choice == '1':
+            print("Result:", num1 + num2)
 
-elif choice == '4':
-    print("Result:", divide(num1, num2))
+        elif choice == '2':
+            print("Result:", num1 - num2)
 
-else:
-    print("Invalid input")
+        elif choice == '3':
+            print("Result:", num1 * num2)
+
+        elif choice == '4':
+
+            if num2 == 0:
+                print("Cannot divide by zero")
+            else:
+                print("Result:", num1 / num2)
+
+        elif choice == '5':
+            print("Result:", num1 ** num2)
+
+        elif choice == '8':
+            print("Result:", num1 % num2)
+
+        else:
+            print("Invalid Choice")
